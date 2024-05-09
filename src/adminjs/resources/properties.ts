@@ -2,6 +2,21 @@ import { ResourceOptions } from "adminjs";
 
 export const propertyResourceOptions: ResourceOptions = {
   navigation: 'Cadastro',
+  properties: {
+    negotiation: {
+      availableValues: [
+        { value: 'Venda', label: 'Venda' },
+        { value: 'Locação', label: 'Locação' },
+        { value: 'Venda / Locação', label: 'Venda / Locação'},
+      ],
+    },
+    description: {
+      type: 'textarea',
+      props: {
+        rows: 5,
+      }
+    },
+  },
   editProperties: [
     'title',
     'price',
@@ -52,9 +67,9 @@ export const propertyResourceOptions: ResourceOptions = {
     'price',
     'negotiation',
     'description',
-    'address', 
-    'buildingArea', 
-    'bedrooms', 
+    'address',
+    'buildingArea',
+    'bedrooms',
     'suites',
     'garage',
     'mainImage',

@@ -18,7 +18,7 @@ export interface Properties {
   categoryId: number,
 }
 
-export interface PropertiesCreationAttributes extends Optional<Properties, 'id' | 'price' | 'suites' | 'featured' > { }
+export interface PropertiesCreationAttributes extends Optional<Properties, 'id' | 'price' | 'suites' | 'mainImage' | 'secondaryImages' | 'featured'> { }
 
 export interface PropertiesInstance extends Model<Properties, PropertiesCreationAttributes>, Properties { }
 
@@ -34,11 +34,9 @@ export const Properties = sequelize.define<PropertiesInstance, Properties>('Prop
     type: DataTypes.STRING
   },
   price: {
-    allowNull: true,
     type: DataTypes.DECIMAL
   },
   negotiation: {
-    defaultValue: 'Venda',
     allowNull: false,
     type: DataTypes.STRING  
   },
@@ -59,20 +57,16 @@ export const Properties = sequelize.define<PropertiesInstance, Properties>('Prop
     type: DataTypes.INTEGER
   },
   suites: {
-    allowNull: true,
     type: DataTypes.INTEGER
   },
   garage: {
-    defaultValue: 0,
     allowNull: false,
     type: DataTypes.INTEGER
   },
   mainImage: {
-    allowNull: false,
     type: DataTypes.STRING
   },
   secondaryImages: {
-    allowNull: false,
     type: DataTypes.STRING
   },      
   featured: {

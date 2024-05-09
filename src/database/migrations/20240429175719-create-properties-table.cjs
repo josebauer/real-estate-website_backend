@@ -15,11 +15,9 @@ module.exports = {
         type: Sequelize.DataTypes.STRING
       },
       price: {
-        allowNull: true,
         type: Sequelize.DataTypes.DECIMAL
       },
       negotiation: {
-        defaultValue: 'Venda',
         allowNull: false,
         type: Sequelize.DataTypes.STRING  
       },
@@ -40,20 +38,16 @@ module.exports = {
         type: Sequelize.DataTypes.INTEGER
       },
       suites: {
-        allowNull: true,
         type: Sequelize.DataTypes.INTEGER
       },
       garage: {
-        defaultValue: 0,
         allowNull: false,
         type: Sequelize.DataTypes.INTEGER
       },
       main_image: {
-        allowNull: false,
         type: Sequelize.DataTypes.STRING
       },
       secondary_images: {
-        allowNull: false,
         type: Sequelize.DataTypes.STRING
       },      
       featured: {
