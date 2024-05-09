@@ -52,12 +52,8 @@ export const propertyResourceOptions: ResourceOptions = {
     'title',
     'price',
     'negotiation',
-    'description',
     'address',
     'buildingArea',
-    'bedrooms',
-    'suites',
-    'garage',
     'featured',
     'categoryId'
   ],
