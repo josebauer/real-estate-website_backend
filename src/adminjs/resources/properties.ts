@@ -1,4 +1,8 @@
-import { ResourceOptions } from "adminjs";
+import uploadFileFeature from '@adminjs/upload'
+import { BaseRecord, ComponentLoader, FeatureType, ResourceOptions } from "adminjs";
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
 
 export const propertyResourceOptions: ResourceOptions = {
   navigation: 'Cadastro',
@@ -24,11 +28,11 @@ export const propertyResourceOptions: ResourceOptions = {
     'description',
     'address',
     'buildingArea',
+    'totalArea',
     'bedrooms',
     'suites',
     'garage',
-    'uploadMainImage',
-    'uploadSecondaryImages',
+    'uploadImages',
     'featured',
     'categoryId'
   ],
@@ -38,7 +42,6 @@ export const propertyResourceOptions: ResourceOptions = {
     'negotiation',
     'description',
     'address',
-    'buildingArea',
     'bedrooms',
     'suites',
     'garage',
@@ -68,11 +71,29 @@ export const propertyResourceOptions: ResourceOptions = {
     'bedrooms',
     'suites',
     'garage',
-    'mainImage',
-    'secondaryImages',
+    'imagesUrl',
     'featured',
     'categoryId',
     'createdAt',
     'updatedAt'
   ]
 }
+
+export const componentLoader = new ComponentLoader()
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+export const propertyResourceFeatures: FeatureType[] = [
+  uploadFileFeature({ 
+    componentLoader,
+    provider: {
+      local: {
+        bucket: path.join(__dirname, '..', '..', '..', 'public')
+      }
+    },
+    properties: {
+      key: 'imagesUrl',
+      file: 'uploadImages'
+    },
+    uploadPath: (record: BaseRecord, filename: string) => `images/property-${record.get('id')}/${filename}`
+  })
+]

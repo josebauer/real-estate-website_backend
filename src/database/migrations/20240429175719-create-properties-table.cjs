@@ -30,26 +30,23 @@ module.exports = {
         type: Sequelize.DataTypes.TEXT
       },
       building_area: {
-        allowNull: false,
+        type: Sequelize.DataTypes.DECIMAL
+      },
+      total_area: {
         type: Sequelize.DataTypes.DECIMAL
       },
       bedrooms: {
-        allowNull: false,
         type: Sequelize.DataTypes.INTEGER
       },
       suites: {
         type: Sequelize.DataTypes.INTEGER
       },
       garage: {
-        allowNull: false,
         type: Sequelize.DataTypes.INTEGER
       },
-      main_image: {
+      images_url: {
         type: Sequelize.DataTypes.STRING
       },
-      secondary_images: {
-        type: Sequelize.DataTypes.STRING
-      },      
       featured: {
         defaultValue: false,
         type: Sequelize.DataTypes.BOOLEAN

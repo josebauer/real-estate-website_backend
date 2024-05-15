@@ -9,16 +9,17 @@ export interface Properties {
   description: string,
   address: string,
   buildingArea: number,
+  totalArea: number,
   bedrooms: number,
   suites: number,
   garage: number,
-  mainImage: string,
-  secondaryImages: string,
+  imagesUrl: string,
   featured: boolean,
   categoryId: number,
 }
 
-export interface PropertiesCreationAttributes extends Optional<Properties, 'id' | 'price' | 'suites' | 'mainImage' | 'secondaryImages' | 'featured'> { }
+export interface PropertiesCreationAttributes extends Optional<Properties, 
+'id' | 'price' | 'buildingArea' | 'totalArea' | 'bedrooms' | 'suites' | 'garage' | 'imagesUrl' | 'featured'> { }
 
 export interface PropertiesInstance extends Model<Properties, PropertiesCreationAttributes>, Properties { }
 
@@ -38,7 +39,7 @@ export const Properties = sequelize.define<PropertiesInstance, Properties>('Prop
   },
   negotiation: {
     allowNull: false,
-    type: DataTypes.STRING  
+    type: DataTypes.STRING
   },
   description: {
     allowNull: false,
@@ -49,26 +50,23 @@ export const Properties = sequelize.define<PropertiesInstance, Properties>('Prop
     type: DataTypes.TEXT
   },
   buildingArea: {
-    allowNull: false,
+    type: DataTypes.DECIMAL
+  },
+  totalArea: {
     type: DataTypes.DECIMAL
   },
   bedrooms: {
-    allowNull: false,
     type: DataTypes.INTEGER
   },
   suites: {
     type: DataTypes.INTEGER
   },
   garage: {
-    allowNull: false,
     type: DataTypes.INTEGER
   },
-  mainImage: {
+  imagesUrl: {
     type: DataTypes.STRING
   },
-  secondaryImages: {
-    type: DataTypes.STRING
-  },      
   featured: {
     defaultValue: false,
     type: DataTypes.BOOLEAN
