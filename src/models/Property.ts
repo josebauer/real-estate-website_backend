@@ -1,7 +1,7 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import { sequelize } from "../database";
 
-export interface Properties {
+export interface Property {
   id: number,
   title: string,
   price: number,
@@ -18,12 +18,12 @@ export interface Properties {
   categoryId: number,
 }
 
-export interface PropertiesCreationAttributes extends Optional<Properties, 
+export interface PropertyCreationAttributes extends Optional<Property, 
 'id' | 'price' | 'buildingArea' | 'totalArea' | 'bedrooms' | 'suites' | 'garage' | 'imagesUrl' | 'featured'> { }
 
-export interface PropertiesInstance extends Model<Properties, PropertiesCreationAttributes>, Properties { }
+export interface PropertyInstance extends Model<Property, PropertyCreationAttributes>, Property { }
 
-export const Properties = sequelize.define<PropertiesInstance, Properties>('Properties', {
+export const Property = sequelize.define<PropertyInstance, Property>('Property', {
   id: {
     allowNull: false,
     autoIncrement: true,

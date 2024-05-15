@@ -1,10 +1,10 @@
 import { Category } from "./Category";
-import { Properties } from "./Properties";
+import { Property } from "./Property";
 
-Category.hasMany(Properties)
-Properties.belongsTo(Category)
+Category.hasMany(Property)
+Property.belongsTo(Category)
 
 export {
   Category,
-  Properties
+  Property
 }
