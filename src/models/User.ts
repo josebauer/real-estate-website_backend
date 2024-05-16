@@ -16,7 +16,7 @@ export interface UserCreationAttributes extends Optional<User, 'id'> { }
 
 export interface UserInstance extends Model<User, UserCreationAttributes>, User { }
 
-export const User = sequelize.define<UserInstance, User>('users', {
+export const User = sequelize.define<UserInstance, User>('User', {
   id: {
     allowNull: false,
     autoIncrement: true,
