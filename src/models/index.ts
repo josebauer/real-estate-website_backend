@@ -1,12 +1,12 @@
 import { Category } from "./Category";
-import { Property } from "./Property";
+import { RealEstate } from "./RealEstate";
 import { User } from "./User";
 
-Category.hasMany(Property)
-Property.belongsTo(Category)
+Category.hasMany(RealEstate)
+RealEstate.belongsTo(Category)
 
 export {
   Category,
-  Property,
+  RealEstate,
   User
 }

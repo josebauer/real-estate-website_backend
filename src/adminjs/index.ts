@@ -3,7 +3,7 @@ import AdminJSExpress from "@adminjs/express";
 import AdminJSSequelize from "@adminjs/sequelize";
 import { sequelize } from "../database";
 import { adminJsResources } from "./resources";
-import { componentLoader } from './resources/property';
+import { componentLoader } from './resources/realEstate';
 import { User } from "../models";
 import bcrypt from "bcrypt";
 

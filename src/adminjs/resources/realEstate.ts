@@ -4,7 +4,7 @@ import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 
-export const propertyResourceOptions: ResourceOptions = {
+export const realEstateResourceOptions: ResourceOptions = {
   navigation: 'Cadastro',
   properties: {
     negotiation: {
@@ -82,7 +82,7 @@ export const propertyResourceOptions: ResourceOptions = {
 export const componentLoader = new ComponentLoader()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-export const propertyResourceFeatures: FeatureType[] = [
+export const realEstateResourceFeatures: FeatureType[] = [
   uploadFileFeature({ 
     componentLoader,
     provider: {

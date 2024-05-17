@@ -5,7 +5,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     const [categories] = await queryInterface.sequelize.query('SELECT id FROM categories;')
 
-    await queryInterface.bulkInsert('properties', [
+    await queryInterface.bulkInsert('real_estates', [
       { 
         title: 'Casa de Alvenaria', 
         price: 1_500, 
@@ -79,6 +79,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('properties', null, {})
+    await queryInterface.bulkDelete('real_estates', null, {})
   }
 };
