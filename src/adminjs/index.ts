@@ -6,6 +6,7 @@ import { adminJsResources } from "./resources";
 import { componentLoader } from './resources/realEstate';
 import { User } from "../models";
 import bcrypt from "bcrypt";
+import { locale } from "./locale";
 
 AdminJS.registerAdapter(AdminJSSequelize)
 
@@ -17,7 +18,8 @@ export const adminJS = new AdminJS({
   branding: {
     companyName: 'Imobiliária JH',
     logo: '/logo.svg'
-  }
+  },
+  locale: locale
 })
 
 adminJS.watch()
