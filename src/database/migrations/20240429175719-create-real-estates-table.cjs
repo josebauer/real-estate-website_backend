@@ -25,9 +25,25 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DataTypes.TEXT
       },
+      zip_code: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       address: {
         allowNull: false,
-        type: Sequelize.DataTypes.TEXT
+        type: Sequelize.DataTypes.STRING
+      },
+      district: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
+      },
+      city:{
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
+      },
+      state: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
       },
       building_area: {
         type: Sequelize.DataTypes.DECIMAL

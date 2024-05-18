@@ -7,7 +7,11 @@ export interface RealEstate {
   price: number,
   negotiation: 'sale' | 'rent' | 'both',
   description: string,
+  zipCode: number,
   address: string,
+  district: string,
+  city: string,
+  state: string,
   buildingArea: number,
   totalArea: number,
   bedrooms: number,
@@ -45,9 +49,25 @@ export const RealEstate = sequelize.define<RealEstateInstance, RealEstate>('Real
     allowNull: false,
     type: DataTypes.TEXT
   },
+  zipCode: {
+    allowNull: false,
+    type: DataTypes.STRING
+  },
   address: {
     allowNull: false,
-    type: DataTypes.TEXT
+    type: DataTypes.STRING
+  },
+  district: {
+    allowNull: false,
+    type: DataTypes.STRING
+  },
+  city: {
+    allowNull: false,
+    type: DataTypes.STRING
+  },
+  state: {
+    allowNull: false,
+    type: DataTypes.STRING
   },
   buildingArea: {
     type: DataTypes.DECIMAL

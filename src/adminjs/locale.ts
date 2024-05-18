@@ -23,7 +23,7 @@ export const locale: Locale = {
         confirmRemovalMany_plural: 'Confirma a remoção de {{count}} registros',
         logout: 'Sair',
         seeTheDocumentation: 'Ver: <1>a documentação<1>',
-        createFirstRecord: 'Criar primeiro registro'
+        createFirstRecord: 'Criar primeiro registro',
       },
       labels: {
         navigation: 'Navegação',
@@ -34,7 +34,7 @@ export const locale: Locale = {
         appVersion: 'App: {{version}}',
         real_estates: 'Imóveis',
         categories: 'Categorias',
-        users: 'Usuários' 
+        users: 'Usuários',
       },
       properties: {
         firstName: 'Nome',
@@ -48,12 +48,16 @@ export const locale: Locale = {
         price: 'Valor',
         negotiation: 'Tipo de negociação',
         description: 'Descrição',
+        zipCode: 'CEP',
         address: 'Endereço',
+        district: 'Bairro',
+        city: 'Cidade',
+        state: 'Estado',
         buildingArea: 'Área construída',
         totalArea: 'Área total',
         bedrooms: 'Quartos',
         suites: 'Suítes',
-        garage: 'garagem',
+        garage: 'Garagem',
         featured: 'Em destaque',
         imagesUrl: 'URL das imagens',
         uploadImages: 'Upload das imagens',
