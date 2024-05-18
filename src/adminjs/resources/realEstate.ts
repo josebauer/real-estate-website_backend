@@ -5,7 +5,9 @@ import { fileURLToPath } from 'url'
 
 
 export const realEstateResourceOptions: ResourceOptions = {
-  navigation: 'Cadastro',
+  navigation: {
+    icon: 'Home'
+  },
   properties: {
     negotiation: {
       availableValues: [

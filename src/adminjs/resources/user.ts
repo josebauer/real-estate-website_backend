@@ -1,7 +1,9 @@
 import { ResourceOptions } from "adminjs";
 
 export const userResourceOptions: ResourceOptions = {
-  navigation: 'Administração',
+  navigation: {
+    icon: 'Users'
+  },
   properties: {
     password: {
       type: 'password'
