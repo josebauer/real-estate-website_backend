@@ -9,7 +9,7 @@ module.exports = {
       { 
         title: 'Casa de Alvenaria', 
         price: 1_500, 
-        negotiation: 'Locação', 
+        negotiation: 'rent', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         address: 'Rua Jubuiklewi, nº 584, Bairro: effef, Canoinhas-SC', 
         building_area: 100, 
@@ -24,7 +24,7 @@ module.exports = {
       { 
         title: 'Apartamento de alto padrão', 
         price: 3_500, 
-        negotiation: 'Locação', 
+        negotiation: 'rent', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         address: 'Rua wfefsf, nº 332, Bairro: effefefes, São Paulo-SP', 
         building_area: 250, 
@@ -39,7 +39,7 @@ module.exports = {
       { 
         title: 'Terreno', 
         price: 100_000, 
-        negotiation: 'Venda', 
+        negotiation: 'sale', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         address: 'Rua wfefswadaf, nº 224, Bairro: Efapi, Chapecó-SC', 
         total_area: 600,
@@ -51,7 +51,7 @@ module.exports = {
       { 
         title: 'Sala comercial', 
         price: 5_500, 
-        negotiation: 'Locação', 
+        negotiation: 'rent', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         address: 'Rua wfefswadaf, nº 111, Bairro: Centro, Chapecó-SC', 
         building_area: 250, 
@@ -64,7 +64,7 @@ module.exports = {
       },
       { 
         title: 'Casa de Madeira',  
-        negotiation: 'Venda / Locação', 
+        negotiation: 'both', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         address: 'Rua wfefswadaf, nº 111, Bairro: Centro, Chapecó-SC', 
         building_area: 60, 

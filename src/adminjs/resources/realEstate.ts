@@ -11,9 +11,9 @@ export const realEstateResourceOptions: ResourceOptions = {
   properties: {
     negotiation: {
       availableValues: [
-        { value: 'Venda', label: 'Venda' },
-        { value: 'Locação', label: 'Locação' },
-        { value: 'Venda / Locação', label: 'Venda / Locação'},
+        { value: 'sale', label: 'Venda' },
+        { value: 'rent', label: 'Locação' },
+        { value: 'both', label: 'Venda e Locação'},
       ],
     },
     description: {
