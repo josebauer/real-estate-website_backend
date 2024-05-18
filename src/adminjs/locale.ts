@@ -1,4 +1,4 @@
-import { Locale } from "adminjs";
+import { Locale, Login } from "adminjs";
 
 export const locale: Locale = {
   language: 'pt-BR',
@@ -22,7 +22,6 @@ export const locale: Locale = {
         confirmRemovalMany: 'Confirma a remoção de {{count}} registro',
         confirmRemovalMany_plural: 'Confirma a remoção de {{count}} registros',
         logout: 'Sair',
-        login: 'Entrar',
         seeTheDocumentation: 'Ver: <1>a documentação<1>',
         createFirstRecord: 'Criar primeiro registro'
       },
@@ -33,7 +32,6 @@ export const locale: Locale = {
         filters: 'Filtros',
         adminVersion: 'Admin: {{version}}',
         appVersion: 'App: {{version}}',
-        loginWelcome: 'Bem-vindo',
         real_estates: 'Imóveis',
         categories: 'Categorias',
         users: 'Usuários' 
@@ -65,6 +63,13 @@ export const locale: Locale = {
         updatedAt: 'Atualizado em',
         from: 'De',
         to: 'Até'
+      },
+      components: {
+        Login: {
+          welcomeHeader: 'Bem-vindo',
+          welcomeMessage: 'Ao painel gerenciador da sua imobiliária!',
+          loginButton: 'Entrar'
+        }
       },
       messages: {
         successfullyBulkDeleted: '{{count}} registro removido com sucesso',
