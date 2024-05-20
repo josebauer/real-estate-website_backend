@@ -94,11 +94,10 @@ export const realEstateResourceOptions: ResourceOptions = {
   listProperties: [
     'id',
     'title',
-    'price',
     'negotiation',
+    'district',
     'city',
     'state',
-    'buildingArea',
     'featured',
     'categoryId'
   ],
