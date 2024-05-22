@@ -4,11 +4,15 @@ import AdminJSSequelize from "@adminjs/sequelize";
 import { sequelize } from "../database";
 import { adminJsResources } from "./resources";
 import { componentLoader } from './resources/realEstate';
-import { User } from "../models";
+import { Category, RealEstate, User } from "../models";
 import bcrypt from "bcrypt";
 import { locale } from "./locale";
 
 AdminJS.registerAdapter(AdminJSSequelize)
+
+const Components = {
+  Dashboard: componentLoader.add('Dashboard', './components/Dashboard'),
+};
 
 export const adminJS = new AdminJS({
   componentLoader,
@@ -21,18 +25,33 @@ export const adminJS = new AdminJS({
     theme: {
       colors: {
         primary100: '#111350',
-	      grey100: '#151515',
-	      grey80: '#333333',
-	      grey60: '#4d4d4d',
-	      grey40: '#111350',
-	      grey20: '#dddddd',
-	      filterBg: '#ECECEC',
-	      accent: '#ECECEC',
-	      hoverBg: '#ECECEC'
+        grey100: '#151515',
+        grey80: '#333333',
+        grey60: '#4d4d4d',
+        grey40: '#111350',
+        grey20: '#dddddd',
+        filterBg: '#ECECEC',
+        accent: '#ECECEC',
+        hoverBg: '#ECECEC'
       }
     }
   },
-  locale: locale
+  locale: locale,
+  dashboard: {
+    component: Components.Dashboard,
+    handler: async (req, res, context) => {
+      const realEstate = await RealEstate.count()
+      const categories = await Category.count()
+      const standardUsers = await User.count({ where: { role: 'user' } })
+
+      res.json({
+        'Imóveis': realEstate,
+        'Categorias': categories,
+        'Usuários': standardUsers
+      })
+    }
+  }
+
 })
 
 adminJS.watch()
