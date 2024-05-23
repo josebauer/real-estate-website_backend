@@ -1,4 +1,4 @@
-import { Locale, Login } from "adminjs";
+import { Locale } from "adminjs";
 
 export const locale: Locale = {
   language: 'pt-BR',

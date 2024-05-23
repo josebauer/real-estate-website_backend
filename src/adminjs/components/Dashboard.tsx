@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { H1, H2, Table, TableHead, TableRow, TableCell, TableBody } from '@adminjs/design-system'
+import { H2, H3, Table, TableHead, TableRow, TableCell, TableBody } from '@adminjs/design-system'
 import { ApiClient, useCurrentAdmin } from 'adminjs'
 
 export default function Dashboard() {
@@ -18,10 +18,10 @@ export default function Dashboard() {
 
   return (
     <section style={{ padding: '1.5rem' }}>
-      <H1>Bem-vindo(a), {currentAdmin?.firstName}</H1>
+      <H2>Bem-vindo(a), {currentAdmin?.firstName}</H2>
 
       <section style={{ backgroundColor: '#FFF', padding: '1.5rem' }}>
-        <H2>Resumo</H2>
+        <H3>Resumo</H3>
         <Table>
           <TableHead>
             <TableRow style={{ backgroundColor: '#111350' }}>
