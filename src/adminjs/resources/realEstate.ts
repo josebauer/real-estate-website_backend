@@ -13,7 +13,7 @@ export const realEstateResourceOptions: ResourceOptions = {
       availableValues: [
         { value: 'sale', label: 'Venda' },
         { value: 'rent', label: 'Locação' },
-        { value: 'both', label: 'Venda e Locação'},
+        { value: 'both', label: 'Venda e Locação' },
       ],
     },
     state: {
@@ -121,14 +121,100 @@ export const realEstateResourceOptions: ResourceOptions = {
     'categoryId',
     'createdAt',
     'updatedAt'
-  ]
+  ],
+  actions: {
+    new: {
+      layout: [
+        ['@Header', { children: 'Insira abaixo os dados do imóvel' }],
+        [
+          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          [
+            ['title', { flexGrow: 1, marginRight: '10px' }],
+            ['price', { flexGrow: 1, marginRight: '10px' }],
+            ['negotiation', { flexGrow: 1 }]
+          ]
+        ],
+        [[['description']]],
+        [
+          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          [
+            ['zipCode', { flexGrow: 1, marginRight: '10px' }],
+            ['address', { flexGrow: 1, marginRight: '10px' }],
+            ['district', { flexGrow: 1, marginRight: '10px' }],
+            ['city', { flexGrow: 1, marginRight: '10px' }],
+            ['state']
+          ]
+        ],
+        [
+          { flexDirection: 'row', flex: true, width: 2 / 3, marginTop: '3rem' },
+          [
+            ['buildingArea', { flexGrow: 1, marginRight: '10px' }],
+            ['totalArea', { flexGrow: 1, marginRight: '10px' }],
+          ]
+        ],
+        [
+          { flexDirection: 'row', flex: true },
+          [
+            ['bedrooms', { flexGrow: 1, marginRight: '10px' }],
+            ['suites', { flexGrow: 1, marginRight: '10px' }],
+            ['garage', { flexGrow: 1 }]
+          ]
+        ],
+        [[['uploadImages']]],
+        [[['featured']]],
+        [[['categoryId']]],
+      ]
+    },
+    edit: {
+      layout: [
+        ['@Header', { children: 'Edite abaixo os dados do imóvel' }],
+        [
+          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          [
+            ['title', { flexGrow: 1, marginRight: '10px' }],
+            ['price', { flexGrow: 1, marginRight: '10px' }],
+            ['negotiation', { flexGrow: 1 }]
+          ]
+        ],
+        [[['description']]],
+        [
+          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          [
+            ['zipCode', { flexGrow: 1, marginRight: '10px' }],
+            ['address', { flexGrow: 1, marginRight: '10px' }],
+            ['district', { flexGrow: 1, marginRight: '10px' }],
+            ['city', { flexGrow: 1, marginRight: '10px' }],
+            ['state']
+          ]
+        ],
+        [
+          { flexDirection: 'row', flex: true, width: 2 / 3, marginTop: '3rem' },
+          [
+            ['buildingArea', { flexGrow: 1, marginRight: '10px' }],
+            ['totalArea', { flexGrow: 1, marginRight: '10px' }],
+          ]
+        ],
+        [
+          { flexDirection: 'row', flex: true },
+          [
+            ['bedrooms', { flexGrow: 1, marginRight: '10px' }],
+            ['suites', { flexGrow: 1, marginRight: '10px' }],
+            ['garage', { flexGrow: 1 }]
+          ]
+        ],
+        [[['uploadImages']]],
+        [[['featured']]],
+        [[['categoryId']]],
+      ]
+    },
+  }
 }
 
 export const componentLoader = new ComponentLoader()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export const realEstateResourceFeatures: FeatureType[] = [
-  uploadFileFeature({ 
+  uploadFileFeature({
     componentLoader,
     provider: {
       local: {
