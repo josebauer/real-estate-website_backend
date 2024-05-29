@@ -3,6 +3,7 @@ import { BrandingOptions } from "adminjs";
 export const brandingOptions: BrandingOptions = {
   companyName: 'Imobiliária JH',
   logo: '/logo.svg',
+  favicon: '/favicon.svg',
   theme: {
     colors: {
       primary100: '#111350',

@@ -213,13 +213,16 @@ export const realEstateResourceOptions: ResourceOptions = {
         [
           { flexDirection: 'row', flex: true, width: 1 / 3, marginTop: '3rem' },
           [
-            ['id', { flexgGrow: 1, marginRight: '4rem'}],
+            ['id', { flexgGrow: 1, marginRight: '4rem' }],
             ['title', { flexGrow: 1 }],
             ['price', { flexGrow: 1 }],
             ['negotiation', { flexGrow: 1 }]
           ]
         ],
-        [[['description']]],
+        [
+          { width: 2 / 3 },
+          [['description']]
+        ],
         [
           { flexDirection: 'row', flex: true, width: 2 / 3 },
           [
