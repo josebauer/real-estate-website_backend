@@ -245,7 +245,7 @@ export const realEstateResourceOptions: ResourceOptions = {
             ['garage', { flexGrow: 1 }]
           ]
         ],
-        [[['uploadImages']]],
+        [[['imagesUrl']]],
         [[['featured']]],
         [[['categoryId']]],
         [
