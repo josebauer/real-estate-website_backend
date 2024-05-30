@@ -19,7 +19,7 @@ export const categoryService = {
     }
   },
 
-  findByIdWithRealEstate: async(id: string) => {
+  findByIdWithRealEstate: async (id: string) => {
     const categoryWithRealEstate = await Category.findByPk(id, {
       attributes: ['id', 'name'],
       include: {
@@ -30,7 +30,7 @@ export const categoryService = {
           'price',
           'negotiation',
           'description',
-          ['zip_code','zipCode'],
+          ['zip_code', 'zipCode'],
           'address',
           'district',
           'city',

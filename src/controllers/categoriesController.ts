@@ -20,7 +20,7 @@ export const categoriesController = {
 
   // Method GET /categories/:id
   show: async (req: Request, res: Response) => {
-    const { id }  = req.params
+    const { id } = req.params
 
     try {
       const category = await categoryService.findByIdWithRealEstate(id)
