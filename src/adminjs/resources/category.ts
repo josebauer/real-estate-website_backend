@@ -14,8 +14,8 @@ export const categoryResourceOptions: ResourceOptions = {
         [
           { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['name', { flexGrow: 1, mx: '10px'}],
-            ['position', { flexGrow: 1, mx: '10px' }],
+            ['name', { flexGrow: 1, mx: '5px'}],
+            ['position', { flexGrow: 1, mx: '5px' }],
           ]
         ],
       ]
@@ -25,8 +25,8 @@ export const categoryResourceOptions: ResourceOptions = {
         [
           { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['name', { flexGrow: 1, mx: '10px' }],
-            ['position', { flexGrow: 1, mx: '10px' }],
+            ['name', { flexGrow: 1, mx: '5px' }],
+            ['position', { flexGrow: 1, mx: '5px' }],
           ]
         ],
       ]

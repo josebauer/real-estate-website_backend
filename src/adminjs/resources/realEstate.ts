@@ -127,135 +127,145 @@ export const realEstateResourceOptions: ResourceOptions = {
       layout: [
         ['@Header', { children: 'Insira abaixo os dados do imóvel' }],
         [
-          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['title', { flexGrow: 1, marginRight: '10px' }],
-            ['price', { flexGrow: 1, marginRight: '10px' }],
-            ['negotiation', { flexGrow: 1 }]
+            ['title', { flexGrow: 1, mx: '5px' }],
+            ['price', { flexGrow: 1, mx: '5px' }],
+            ['negotiation', { flexGrow: 1, mx: '5px' }]
           ]
         ],
-        [[['description']]],
+        [[['description', { mx: '5px' }]]],
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['zipCode', { flexGrow: 1, marginRight: '10px' }],
-            ['address', { flexGrow: 1, marginRight: '10px' }],
-            ['district', { flexGrow: 1, marginRight: '10px' }],
-            ['city', { flexGrow: 1, marginRight: '10px' }],
-            ['state']
-          ]
-        ],
-        [
-          { flexDirection: 'row', flex: true, width: 2 / 3 },
-          [
-            ['buildingArea', { flexGrow: 1, marginRight: '10px' }],
-            ['totalArea', { flexGrow: 1 }],
+            ['zipCode', { flexGrow: 1, mx: '5px' }],
+            ['address', { flexGrow: 1, mx: '5px' }],
+            ['district', { flexGrow: 1, mx: '5px' }],
+            ['city', { flexGrow: 1, mx: '5px' }],
+            ['state', { mx: '5px' }]
           ]
         ],
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', width: 2 / 3 },
           [
-            ['bedrooms', { flexGrow: 1, marginRight: '10px' }],
-            ['suites', { flexGrow: 1, marginRight: '10px' }],
-            ['garage', { flexGrow: 1 }]
+            ['buildingArea', { flexGrow: 1, mx: '5px' }],
+            ['totalArea', { flexGrow: 1, mx: '5px' }],
           ]
         ],
-        [[['uploadImages']]],
-        [[['featured']]],
-        [[['categoryId']]],
+        [
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
+          [
+            ['bedrooms', { flexGrow: 1, mx: '5px' }],
+            ['suites', { flexGrow: 1, mx: '5px' }],
+            ['garage', { flexGrow: 1, mx: '5px' }]
+          ]
+        ],
+        [[['uploadImages', { mx: '5px' }]]],
+        [[['featured', { mx: '5px' }]]],
+        [[['categoryId', { mx: '5px' }]]],
       ]
     },
     edit: {
       layout: [
         ['@Header', { children: 'Edite abaixo os dados do imóvel' }],
         [
-          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['title', { flexGrow: 1, marginRight: '10px' }],
-            ['price', { flexGrow: 1, marginRight: '10px' }],
-            ['negotiation', { flexGrow: 1 }]
+            ['title', { flexGrow: 1, mx: '5px' }],
+            ['price', { flexGrow: 1, mx: '5px' }],
+            ['negotiation', { flexGrow: 1, mx: '5px' }]
           ]
         ],
-        [[['description']]],
+        [[['description', { mx: '5px' }]]],
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['zipCode', { flexGrow: 1, marginRight: '10px' }],
-            ['address', { flexGrow: 1, marginRight: '10px' }],
-            ['district', { flexGrow: 1, marginRight: '10px' }],
-            ['city', { flexGrow: 1, marginRight: '10px' }],
-            ['state']
-          ]
-        ],
-        [
-          { flexDirection: 'row', flex: true, width: 2 / 3 },
-          [
-            ['buildingArea', { flexGrow: 1, marginRight: '10px' }],
-            ['totalArea', { flexGrow: 1 }],
+            ['zipCode', { flexGrow: 1, mx: '5px' }],
+            ['address', { flexGrow: 1, mx: '5px' }],
+            ['district', { flexGrow: 1, mx: '5px' }],
+            ['city', { flexGrow: 1, mx: '5px' }],
+            ['state', { mx: '5px' }]
           ]
         ],
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', width: 2 / 3 },
           [
-            ['bedrooms', { flexGrow: 1, marginRight: '10px' }],
-            ['suites', { flexGrow: 1, marginRight: '10px' }],
-            ['garage', { flexGrow: 1 }]
+            ['buildingArea', { flexGrow: 1, mx: '5px' }],
+            ['totalArea', { flexGrow: 1, mx: '5px' }],
           ]
         ],
-        [[['uploadImages']]],
-        [[['featured']]],
-        [[['categoryId']]],
+        [
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
+          [
+            ['bedrooms', { flexGrow: 1, mx: '5px' }],
+            ['suites', { flexGrow: 1, mx: '5px' }],
+            ['garage', { flexGrow: 1, mx: '5px' }]
+          ]
+        ],
+        [[['uploadImages', { mx: '5px' }]]],
+        [[['featured', { mx: '5px' }]]],
+        [[['categoryId', { mx: '5px' }]]],
       ]
     },
     show: {
       layout: [
         ['@Header', { children: 'Dados do imóvel' }],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3, marginTop: '3rem' },
+          { marginTop: '3rem' },
+          [['id', { flexgGrow: 1, mx: '5px'}]]
+        ],
+        [
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['id', { flexgGrow: 1, marginRight: '4rem' }],
-            ['title', { flexGrow: 1 }],
-            ['price', { flexGrow: 1 }],
-            ['negotiation', { flexGrow: 1 }]
+            ['title', { flexGrow: 1, mx: '5px' }],
+            ['price', { flexGrow: 1, mx: '5px' }],
+            ['negotiation', { flexGrow: 1, mx: '5px' }]
           ]
         ],
         [
-          { width: 2 / 3 },
-          [['description']]
+          { marginTop: '3rem' },
+          [['description', { mx: '5px' }]]
         ],
         [
-          { flexDirection: 'row', flex: true, width: 2 / 3 },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['zipCode', { flexGrow: 1 }],
-            ['address', { flexGrow: 1 }],
-            ['district', { flexGrow: 1 }],
-            ['city', { flexGrow: 1 }],
-            ['state']
+            ['zipCode', { flexGrow: 1, mx: '5px' }],
+            ['address', { flexGrow: 1, mx: '5px' }],
+            ['district', { flexGrow: 1, mx: '5px' }],
+            ['city', { flexGrow: 1, mx: '5px' }],
+            ['state', { mx: '5px' }]
           ]
         ],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3 },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['buildingArea', { flexGrow: 1 }],
-            ['totalArea', { flexGrow: 1 }],
+            ['buildingArea', { flexGrow: 1, mx: '5px' }],
+            ['totalArea', { flexGrow: 1, mx: '5px' }],
           ]
         ],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3 },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['bedrooms', { flexGrow: 1 }],
-            ['suites', { flexGrow: 1 }],
-            ['garage', { flexGrow: 1 }]
+            ['bedrooms', { flexGrow: 1, mx: '5px' }],
+            ['suites', { flexGrow: 1, mx: '5px' }],
+            ['garage', { flexGrow: 1, mx: '5px' }]
           ]
         ],
-        [[['imagesUrl']]],
-        [[['featured']]],
-        [[['categoryId']]],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3 },
+          { marginTop: '3rem' },
+          [['imagesUrl', { mx: '5px' }]]
+        ],
+        [
+          { marginTop: '3rem' },
+          [['featured', { mx: '5px' }]]],
+        [
+          { marginTop: '3rem' },
+          [['categoryId', { mx: '5px' }]]],
+        [
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['createdAt', { flexGrow: 1 }],
-            ['updatedAt', { flexGrow: 1 }],
+            ['createdAt', { flexGrow: 1, mx: '5px' }],
+            ['updatedAt', { flexGrow: 1, mx: '5px' }],
           ]
         ],
       ]
