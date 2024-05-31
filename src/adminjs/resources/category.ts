@@ -12,10 +12,10 @@ export const categoryResourceOptions: ResourceOptions = {
     new: {
       layout: [
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['name', { flexGrow: 1, marginRight: '10px' }],
-            ['position', { flexGrow: 1 }],
+            ['name', { flexGrow: 1, mx: '10px'}],
+            ['position', { flexGrow: 1, mx: '10px' }],
           ]
         ],
       ]
@@ -23,33 +23,13 @@ export const categoryResourceOptions: ResourceOptions = {
     edit: {
       layout: [
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['id', { flexgGrow: 1, marginRight: '10px' }],
-            ['name', { flexGrow: 1, marginRight: '10px' }],
-            ['position', { flexGrow: 1 }],
+            ['name', { flexGrow: 1, mx: '10px' }],
+            ['position', { flexGrow: 1, mx: '10px' }],
           ]
         ],
       ]
-    },
-    show: {
-      layout: [
-        [
-          { flexDirection: 'row', flex: true, width: 1 / 3 },
-          [
-            ['id', { flexgGrow: 1, marginRight: '5rem' }],
-            ['name', { flexGrow: 1 }],
-            ['position', { flexGrow: 1 }],
-          ]
-        ],
-        [
-          { flexDirection: 'row', flex: true, width: 1 / 3, marginTop: '2rem'},
-          [
-            ['createdAt', { flexGrow: 1 }],
-            ['updatedAt', { flexGrow: 1 }],
-          ]
-        ],
-      ]
-    },
+    }
   }
 }
