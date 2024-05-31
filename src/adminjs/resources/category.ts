@@ -14,7 +14,7 @@ export const categoryResourceOptions: ResourceOptions = {
         [
           { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['name', { flexGrow: 1, mx: '5px'}],
+            ['name', { flexGrow: 1, mx: '5px' }],
             ['position', { flexGrow: 1, mx: '5px' }],
           ]
         ],
@@ -29,6 +29,31 @@ export const categoryResourceOptions: ResourceOptions = {
             ['position', { flexGrow: 1, mx: '5px' }],
           ]
         ],
+      ]
+    },
+    show: {
+      layout: [
+        ['@Header', { children: 'Dados da categoria' }],
+        [
+          { marginTop: '3rem' },
+          [['id']]
+        ],
+        [
+          { marginTop: '3rem' },
+          [['name']]
+        ],
+        [
+          { marginTop: '3rem' },
+          [['position']]
+        ],
+        [
+          { marginTop: '3rem' },
+          [['createdAt']]
+        ],
+        [
+          { marginTop: '3rem' },
+          [['updatedAt']]
+        ]
       ]
     }
   }

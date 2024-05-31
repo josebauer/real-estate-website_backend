@@ -212,7 +212,7 @@ export const realEstateResourceOptions: ResourceOptions = {
         ['@Header', { children: 'Dados do imóvel' }],
         [
           { marginTop: '3rem' },
-          [['id', { flexgGrow: 1, mx: '5px'}]]
+          [['id', { mx: '5px' }]]
         ],
         [
           { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },

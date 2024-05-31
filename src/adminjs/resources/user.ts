@@ -54,19 +54,19 @@ export const userResourceOptions: ResourceOptions = {
       layout: [
         ['@Header', { children: 'Insira abaixo os dados do usuário' }],
         [
-          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['firstName', { flexGrow: 1, marginRight: '10px' }],
-            ['lastName', { flexGrow: 1, marginRight: '10px' }],
-            ['phone', { flexGrow: 1 }]
+            ['firstName', { flexGrow: 1, mx: '5px' }],
+            ['lastName', { flexGrow: 1, mx: '5px' }],
+            ['phone', { flexGrow: 1, mx: '5px' }]
           ]
         ],
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['email', { flexGrow: 1, marginRight: '10px' }],
-            ['password', { flexGrow: 1, marginRight: '10px' }],
-            ['role', { flexGrow: 1 }]
+            ['email', { flexGrow: 1, mx: '5px' }],
+            ['password', { flexGrow: 1, mx: '5px' }],
+            ['role', { flexGrow: 1, mx: '5px' }]
           ]
         ]
       ]
@@ -75,19 +75,19 @@ export const userResourceOptions: ResourceOptions = {
       layout: [
         ['@Header', { children: 'Edite abaixo os dados do usuário' }],
         [
-          { flexDirection: 'row', flex: true, marginTop: '3rem' },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['firstName', { flexGrow: 1, marginRight: '10px' }],
-            ['lastName', { flexGrow: 1, marginRight: '10px' }],
-            ['phone', { flexGrow: 1 }]
+            ['firstName', { flexGrow: 1, mx: '5px' }],
+            ['lastName', { flexGrow: 1, mx: '5px' }],
+            ['phone', { flexGrow: 1, mx: '5px' }]
           ]
         ],
         [
-          { flexDirection: 'row', flex: true },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
           [
-            ['email', { flexGrow: 1, marginRight: '10px' }],
-            ['password', { flexGrow: 1, marginRight: '10px' }],
-            ['role', { flexGrow: 1 }]
+            ['email', { flexGrow: 1, mx: '5px' }],
+            ['password', { flexGrow: 1, mx: '5px' }],
+            ['role', { flexGrow: 1, mx: '5px' }]
           ]
         ]
       ]
@@ -96,26 +96,32 @@ export const userResourceOptions: ResourceOptions = {
       layout: [
         ['@Header', { children: 'Dados do usuário' }],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3, marginTop: '3rem' },
+          { marginTop: '3rem' },
+          [['id', { mx: '5px' }]],
+        ],
+        [
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['id', { flexgGrow: 1, marginRight: '5rem'}],
-            ['firstName', { flexGrow: 1 }],
-            ['lastName', { flexGrow: 1 }],
+            ['firstName', { flexGrow: 1, mx: '5px' }],
+            ['lastName', { flexGrow: 1, mx: '5px' }],
           ]
         ],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3 },
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['phone', { flexGrow: 1 }],
-            ['email', { flexGrow: 1 }],
+            ['phone', { flexGrow: 1, mx: '5px' }],
+            ['email', { flexGrow: 1, mx: '5px' }],
           ]
         ],
-        [[['role']]],
         [
-          { flexDirection: 'row', flex: true, width: 1 / 3 },
+          { marginTop: '3rem' },
+          [['role', { mx: '5px' }]]
+        ],
+        [
+          { flexDirection: 'row', flex: true, flexWrap: 'wrap', marginTop: '3rem' },
           [
-            ['createdAt', { flexGrow: 1 }],
-            ['updatedAt', { flexGrow: 1 }]
+            ['createdAt', { flexGrow: 1, mx: '5px' }],
+            ['updatedAt', { flexGrow: 1, mx: '5px' }]
           ]
         ]
       ]
