@@ -54,5 +54,14 @@ export const realEstateService = {
     const randomFeaturedRealEstate = featuredRealEstate.sort(() => 0.5 - Math.random())
 
     return randomFeaturedRealEstate
+  },
+
+  getTopTenNewest: async () => {
+    const realEstate = await RealEstate.findAll({
+      limit: 10,
+      order: [['created_at', 'DESC']]
+    })
+    
+    return realEstate
   }
 }
