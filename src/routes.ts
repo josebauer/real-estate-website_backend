@@ -9,6 +9,7 @@ router.get('/categories/:id', categoriesController.show)
 
 router.get('/real-estate/featured', realEstateController.featured)
 router.get('/real-estate/newest', realEstateController.newest)
+router.get('/real-estate/filter', realEstateController.filter)
 router.get('/real-estate/:id', realEstateController.show)
 
 export { router } 

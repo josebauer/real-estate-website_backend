@@ -1,5 +1,9 @@
 import { RealEstate } from "../models"
 
+interface WhereConditions {
+  categoryId?: string;
+}
+
 export const realEstateService = {
   findbyIdWithDetails: async (id: string) => {
     const realEstateWithDetails = await RealEstate.findByPk(id, {
@@ -61,7 +65,36 @@ export const realEstateService = {
       limit: 10,
       order: [['created_at', 'DESC']]
     })
-    
+
     return realEstate
+  },
+
+  findByNegotitationType: async (negotiation: string) => {
+    const realEstateNegotiation = RealEstate.findAll({
+      attributes: [
+        'id',
+        'title',
+        'price',
+        'negotiation',
+        'description',
+        ['zip_code', 'zipCode'],
+        'address',
+        'district',
+        'city',
+        'state',
+        ['building_area', 'buildingArea'],
+        ['total_area', 'totalArea'],
+        'bedrooms',
+        'suites',
+        'garage',
+        ['images_url', 'imagesUrl'],
+        ['category_id', 'categoryId']
+      ],
+      where: {
+        negotiation
+      }
+    })
+
+    return realEstateNegotiation
   }
 }
