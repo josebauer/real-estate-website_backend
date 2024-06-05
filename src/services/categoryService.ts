@@ -39,7 +39,7 @@ export const categoryService = {
           ['total_area', 'totalArea'],
           'bedrooms',
           'suites',
-          'garage',
+          'garages',
           ['images_url', 'imagesUrl']
         ]
       }

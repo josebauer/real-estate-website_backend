@@ -12,8 +12,7 @@ export const realEstateResourceOptions: ResourceOptions = {
     negotiation: {
       availableValues: [
         { value: 'sale', label: 'Venda' },
-        { value: 'rent', label: 'Locação' },
-        { value: 'both', label: 'Venda e Locação' },
+        { value: 'rent', label: 'Locação' }
       ],
     },
     state: {
@@ -68,7 +67,7 @@ export const realEstateResourceOptions: ResourceOptions = {
     'totalArea',
     'bedrooms',
     'suites',
-    'garage',
+    'garages',
     'uploadImages',
     'featured',
     'categoryId'
@@ -85,7 +84,7 @@ export const realEstateResourceOptions: ResourceOptions = {
     'state',
     'bedrooms',
     'suites',
-    'garage',
+    'garages',
     'featured',
     'categoryId',
     'createdAt',
@@ -115,7 +114,7 @@ export const realEstateResourceOptions: ResourceOptions = {
     'buildingArea',
     'bedrooms',
     'suites',
-    'garage',
+    'garages',
     'imagesUrl',
     'featured',
     'categoryId',
@@ -157,7 +156,7 @@ export const realEstateResourceOptions: ResourceOptions = {
           [
             ['bedrooms', { flexGrow: 1, mx: '5px' }],
             ['suites', { flexGrow: 1, mx: '5px' }],
-            ['garage', { flexGrow: 1, mx: '5px' }]
+            ['garages', { flexGrow: 1, mx: '5px' }]
           ]
         ],
         [[['uploadImages', { mx: '5px' }]]],
@@ -199,7 +198,7 @@ export const realEstateResourceOptions: ResourceOptions = {
           [
             ['bedrooms', { flexGrow: 1, mx: '5px' }],
             ['suites', { flexGrow: 1, mx: '5px' }],
-            ['garage', { flexGrow: 1, mx: '5px' }]
+            ['garages', { flexGrow: 1, mx: '5px' }]
           ]
         ],
         [[['uploadImages', { mx: '5px' }]]],
@@ -248,7 +247,7 @@ export const realEstateResourceOptions: ResourceOptions = {
           [
             ['bedrooms', { flexGrow: 1, mx: '5px' }],
             ['suites', { flexGrow: 1, mx: '5px' }],
-            ['garage', { flexGrow: 1, mx: '5px' }]
+            ['garages', { flexGrow: 1, mx: '5px' }]
           ]
         ],
         [

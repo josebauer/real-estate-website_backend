@@ -5,7 +5,7 @@ export interface RealEstate {
   id: number,
   title: string,
   price: number,
-  negotiation: 'sale' | 'rent' | 'both',
+  negotiation: 'sale' | 'rent',
   description: string,
   zipCode: number,
   address: string,
@@ -16,14 +16,14 @@ export interface RealEstate {
   totalArea: number,
   bedrooms: number,
   suites: number,
-  garage: number,
+  garages: number,
   imagesUrl: string,
   featured: boolean,
   categoryId: number,
 }
 
 export interface RealEstateCreationAttributes extends Optional<RealEstate, 
-'id' | 'price' | 'buildingArea' | 'totalArea' | 'bedrooms' | 'suites' | 'garage' | 'imagesUrl' | 'featured'> { }
+'id' | 'price' | 'buildingArea' | 'totalArea' | 'bedrooms' | 'suites' | 'garages' | 'imagesUrl' | 'featured'> { }
 
 export interface RealEstateInstance extends Model<RealEstate, RealEstateCreationAttributes>, RealEstate { }
 
@@ -81,7 +81,7 @@ export const RealEstate = sequelize.define<RealEstateInstance, RealEstate>('Real
   suites: {
     type: DataTypes.INTEGER
   },
-  garage: {
+  garages: {
     type: DataTypes.INTEGER
   },
   imagesUrl: {

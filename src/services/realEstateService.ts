@@ -1,9 +1,5 @@
 import { RealEstate } from "../models"
 
-interface WhereConditions {
-  categoryId?: string;
-}
-
 export const realEstateService = {
   findbyIdWithDetails: async (id: string) => {
     const realEstateWithDetails = await RealEstate.findByPk(id, {
@@ -22,7 +18,7 @@ export const realEstateService = {
         ['total_area', 'totalArea'],
         'bedrooms',
         'suites',
-        'garage',
+        'garages',
         ['images_url', 'imagesUrl']
       ]
     })
@@ -47,7 +43,7 @@ export const realEstateService = {
         ['total_area', 'totalArea'],
         'bedrooms',
         'suites',
-        'garage',
+        'garages',
         ['images_url', 'imagesUrl']
       ],
       where: {
@@ -86,7 +82,7 @@ export const realEstateService = {
         ['total_area', 'totalArea'],
         'bedrooms',
         'suites',
-        'garage',
+        'garages',
         ['images_url', 'imagesUrl'],
         ['category_id', 'categoryId']
       ],

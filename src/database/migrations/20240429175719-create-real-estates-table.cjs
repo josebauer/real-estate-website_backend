@@ -57,7 +57,7 @@ module.exports = {
       suites: {
         type: Sequelize.DataTypes.INTEGER
       },
-      garage: {
+      garages: {
         type: Sequelize.DataTypes.INTEGER
       },
       images_url: {

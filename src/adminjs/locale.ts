@@ -57,7 +57,7 @@ export const locale: Locale = {
         totalArea: 'Área total',
         bedrooms: 'Quartos',
         suites: 'Suítes',
-        garage: 'Garagem',
+        garages: 'Vagas de garagem',
         featured: 'Em destaque',
         imagesUrl: 'URL das imagens',
         uploadImages: 'Upload das imagens',
