@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { realEstateService } from "../services/realEstateService";
+import { getPaginationParams } from "../helpers/getPaginationParams";
 
 export const realEstateController = {
   // Method GET /real-estate/fetured
@@ -26,12 +27,14 @@ export const realEstateController = {
     }
   },
 
+  // Method GET /real-estate/filter
   filter: async (req: Request, res: Response) => {
     const { negotiation } = req.query
+    const [page, perPage] = getPaginationParams(req.query)
 
     try {
       if (typeof negotiation !== 'string') throw new Error('negotiation param must be of type string')
-      const filterRealEstate = await realEstateService.findByNegotitationType(negotiation)
+      const filterRealEstate = await realEstateService.findByNegotitationType(negotiation, page, perPage)
       return res.json(filterRealEstate)
     } catch (error) {
       if (error instanceof Error) {

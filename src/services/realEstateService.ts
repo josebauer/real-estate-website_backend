@@ -65,8 +65,10 @@ export const realEstateService = {
     return realEstate
   },
 
-  findByNegotitationType: async (negotiation: string) => {
-    const realEstateNegotiation = RealEstate.findAll({
+  findByNegotitationType: async (negotiation: string, page: number, perPage: number) => {
+    const offset = (page - 1) * perPage
+
+    const { count, rows } = await RealEstate.findAndCountAll({
       attributes: [
         'id',
         'title',
@@ -88,9 +90,16 @@ export const realEstateService = {
       ],
       where: {
         negotiation
-      }
+      },
+      limit: perPage,
+      offset
     })
 
-    return realEstateNegotiation
+    return {
+      realEstate: rows,
+      page,
+      perPage,
+      total: count
+    }
   }
 }
