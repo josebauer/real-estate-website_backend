@@ -20,5 +20,6 @@ router.get('/real-estate/:id', realEstateController.show)
 
 router.get('/favorites', ensureAuth, favoriteController.index)
 router.post('/favorites', ensureAuth, favoriteController.save)
+router.delete('/favorites/:id', ensureAuth, favoriteController.delete)
 
 export { router } 
