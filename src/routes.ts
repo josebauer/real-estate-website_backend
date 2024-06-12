@@ -2,6 +2,8 @@ import express from 'express'
 import { categoriesController } from './controllers/categoriesController'
 import { realEstateController } from './controllers/realEstateController'
 import { authController } from './controllers/authController'
+import { favoriteController } from './controllers/favoritesController'
+import { ensureAuth } from './middlewares/auth'
 
 const router = express.Router()
 
@@ -16,5 +18,6 @@ router.get('/real-estate/newest', realEstateController.newest)
 router.get('/real-estate/filter', realEstateController.filter)
 router.get('/real-estate/:id', realEstateController.show)
 
+router.post('/favorites', ensureAuth, favoriteController.save)
 
 export { router } 
