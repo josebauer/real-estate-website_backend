@@ -18,6 +18,7 @@ router.get('/real-estate/newest', realEstateController.newest)
 router.get('/real-estate/filter', realEstateController.filter)
 router.get('/real-estate/:id', realEstateController.show)
 
+router.get('/favorites', ensureAuth, favoriteController.index)
 router.post('/favorites', ensureAuth, favoriteController.save)
 
 export { router } 
