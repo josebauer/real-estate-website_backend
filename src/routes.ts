@@ -24,5 +24,6 @@ router.post('/favorites', ensureAuth, favoriteController.save)
 router.delete('/favorites/:id', ensureAuth, favoriteController.delete)
 
 router.get('/users/current', ensureAuth, usersController.show)
+router.put('/users/current', ensureAuth, usersController.update)
 
 export { router } 
