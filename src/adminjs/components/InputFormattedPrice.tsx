@@ -32,6 +32,7 @@ export default function InputFormattedPrice({ record }: ShowPropertyProps) {
         fixedDecimalScale={true}
         allowNegative={false}
       />
+      <div style={{ height: '24px', marginTop: '4px' }}></div>
     </div>
   )
 }

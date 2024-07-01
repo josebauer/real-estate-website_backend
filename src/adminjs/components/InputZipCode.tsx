@@ -11,7 +11,7 @@ export default function InputZipCode({ record }: ShowPropertyProps) {
     if (record && record) {
       setValue(record.params.zipCode)
     }
-  }, [record.params.zipCode]) 
+  }, [record.params.zipCode])
 
   return (
     <div>
@@ -21,10 +21,11 @@ export default function InputZipCode({ record }: ShowPropertyProps) {
         customInput={Input}
         style={{ width: '100%' }}
         value={value}
-        onValueChange={(values: ValuesType) => { setValue(values.value) }}     
+        onValueChange={(values: ValuesType) => { setValue(values.value) }}
         format="#####-###"
         required
       />
+      <div style={{ height: '24px', marginTop: '4px' }}></div>
     </div>
   )
 }
