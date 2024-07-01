@@ -1,19 +1,29 @@
 import uploadFileFeature from '@adminjs/upload'
-import { BaseRecord, ComponentLoader, FeatureType, ResourceOptions } from "adminjs";
+import { BaseRecord, FeatureType, ResourceOptions } from "adminjs";
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
-
+import { Components, componentLoader } from '../components';
 
 export const realEstateResourceOptions: ResourceOptions = {
   navigation: {
     icon: 'Home'
   },
   properties: {
+    price: {
+      components: {
+        edit: Components.InputFormattedPrice
+      }
+    },
     negotiation: {
       availableValues: [
-        { value: 'sale', label: 'Venda' },
-        { value: 'rent', label: 'Locação' }
+        { value: 'venda', label: 'Venda' },
+        { value: 'locação', label: 'Locação' }
       ],
+    },
+    zipCode: {
+      components: {
+        edit: Components.InputZipCode
+      }
     },
     state: {
       availableValues: [
@@ -272,7 +282,6 @@ export const realEstateResourceOptions: ResourceOptions = {
   }
 }
 
-export const componentLoader = new ComponentLoader()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export const realEstateResourceFeatures: FeatureType[] = [
@@ -285,8 +294,11 @@ export const realEstateResourceFeatures: FeatureType[] = [
     },
     properties: {
       key: 'imagesUrl',
-      file: 'uploadImages'
+      file: 'uploadImages',
+      multiple: true
     },
-    uploadPath: (record: BaseRecord, filename: string) => `images/property-${record.get('id')}/${filename}`
+    validation: {  mimeTypes: ["image/png", "image/jpeg", "image/jpg"] },
+    uploadPath: (record: BaseRecord, filename: string) => `images/property-${record.get('id')}/${filename}`,
+    multiple: true
   })
 ]

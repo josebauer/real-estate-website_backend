@@ -3,17 +3,14 @@ import AdminJSExpress from "@adminjs/express";
 import AdminJSSequelize from "@adminjs/sequelize";
 import { sequelize } from "../database";
 import { adminJsResources } from "./resources";
-import { componentLoader } from './resources/realEstate';
+import { componentLoader } from './components';
 import { Category, RealEstate, User } from "../models";
 import { locale } from "./locale";
 import { brandingOptions } from "./branding";
 import { authenticationOptions } from "./authentication";
+import { Components } from "./components";
 
 AdminJS.registerAdapter(AdminJSSequelize)
-
-const Components = {
-  Dashboard: componentLoader.add('Dashboard', './components/Dashboard'),
-}
 
 export const adminJS = new AdminJS({
   componentLoader,
@@ -35,8 +32,7 @@ export const adminJS = new AdminJS({
         'Usuários': standardUsers
       })
     }
-  }
-
+  },
 })
 
 adminJS.watch()

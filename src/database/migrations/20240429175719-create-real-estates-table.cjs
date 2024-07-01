@@ -1,5 +1,7 @@
 'use strict';
 
+const { DataTypes } = require('sequelize');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -15,7 +17,7 @@ module.exports = {
         type: Sequelize.DataTypes.STRING
       },
       price: {
-        type: Sequelize.DataTypes.DECIMAL
+        type: Sequelize.DataTypes.STRING
       },
       negotiation: {
         allowNull: false,
@@ -27,7 +29,7 @@ module.exports = {
       },
       zip_code: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.DataTypes.STRING
       },
       address: {
         allowNull: false,
@@ -61,7 +63,7 @@ module.exports = {
         type: Sequelize.DataTypes.INTEGER
       },
       images_url: {
-        type: Sequelize.DataTypes.STRING
+        type: Sequelize.DataTypes.ARRAY(Sequelize.DataTypes.STRING)
       },
       featured: {
         defaultValue: false,

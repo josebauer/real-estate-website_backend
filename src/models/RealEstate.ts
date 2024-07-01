@@ -4,10 +4,10 @@ import { sequelize } from "../database";
 export interface RealEstate {
   id: number,
   title: string,
-  price: number,
-  negotiation: 'sale' | 'rent',
+  price: string,
+  negotiation: 'venda' | 'locação',
   description: string,
-  zipCode: number,
+  zipCode: string,
   address: string,
   district: string,
   city: string,
@@ -17,7 +17,7 @@ export interface RealEstate {
   bedrooms: number,
   suites: number,
   garages: number,
-  imagesUrl: string,
+  imagesUrl: Array<String>,
   featured: boolean,
   categoryId: number,
 }
@@ -39,7 +39,7 @@ export const RealEstate = sequelize.define<RealEstateInstance, RealEstate>('Real
     type: DataTypes.STRING
   },
   price: {
-    type: DataTypes.DECIMAL
+    type: DataTypes.STRING
   },
   negotiation: {
     allowNull: false,
@@ -85,7 +85,7 @@ export const RealEstate = sequelize.define<RealEstateInstance, RealEstate>('Real
     type: DataTypes.INTEGER
   },
   imagesUrl: {
-    type: DataTypes.STRING
+    type: DataTypes.ARRAY(DataTypes.STRING)
   },
   featured: {
     defaultValue: false,
