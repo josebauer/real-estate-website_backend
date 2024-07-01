@@ -62,6 +62,16 @@ export const realEstateResourceOptions: ResourceOptions = {
         rows: 5,
       }
     },
+    buildingArea: {
+      components: {
+        edit: Components.InputBuildingArea
+      }
+    },
+    totalArea: {
+      components: {
+        edit: Components.InputTotalArea
+      }
+    }
   },
   editProperties: [
     'title',
