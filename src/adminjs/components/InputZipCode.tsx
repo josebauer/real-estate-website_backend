@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { Label, Input } from '@adminjs/design-system'
 import { PatternFormat } from "react-number-format";
-import { ValuesType } from "./InputFormattedPrice";
-import { ShowPropertyProps } from "adminjs";
+import { EditPropertyProps } from "adminjs";
 
-export default function InputZipCode({ record }: ShowPropertyProps) {
+export default function InputZipCode({ property, record, onChange }: EditPropertyProps) {
   const [value, setValue] = useState('')
 
   useEffect(() => {
-    if (record && record) {
-      setValue(record.params.zipCode)
+    if (record && record.params) {
+      setValue(record.params[property.path] || '')
     }
-  }, [record.params.zipCode])
+  }, [record, property.path])
+
+  const handleValueChange = (values: { value: string, formattedValue: string }) => {
+    setValue(values.formattedValue)
+    onChange(property.path, values.formattedValue)
+  }
 
   return (
     <div>
-      <Label required for="zipCode">CEP</Label>
+      <Label required htmlFor="zipCode">CEP</Label>
       <PatternFormat
         id="zipCode"
         customInput={Input}
         style={{ width: '100%' }}
         value={value}
-        onValueChange={(values: ValuesType) => { setValue(values.value) }}
+        onValueChange={handleValueChange}
         format="#####-###"
         required
       />

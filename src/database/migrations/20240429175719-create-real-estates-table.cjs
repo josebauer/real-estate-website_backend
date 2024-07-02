@@ -48,10 +48,10 @@ module.exports = {
         type: Sequelize.DataTypes.STRING
       },
       building_area: {
-        type: Sequelize.DataTypes.DECIMAL
+        type: Sequelize.DataTypes.STRING
       },
       total_area: {
-        type: Sequelize.DataTypes.DECIMAL
+        type: Sequelize.DataTypes.STRING
       },
       bedrooms: {
         type: Sequelize.DataTypes.INTEGER

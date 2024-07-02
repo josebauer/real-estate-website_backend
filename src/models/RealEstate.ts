@@ -12,8 +12,8 @@ export interface RealEstate {
   district: string,
   city: string,
   state: string,
-  buildingArea: number,
-  totalArea: number,
+  buildingArea: string,
+  totalArea: string,
   bedrooms: number,
   suites: number,
   garages: number,
@@ -70,10 +70,10 @@ export const RealEstate = sequelize.define<RealEstateInstance, RealEstate>('Real
     type: DataTypes.STRING
   },
   buildingArea: {
-    type: DataTypes.DECIMAL
+    type: DataTypes.STRING
   },
   totalArea: {
-    type: DataTypes.DECIMAL
+    type: DataTypes.STRING
   },
   bedrooms: {
     type: DataTypes.INTEGER
