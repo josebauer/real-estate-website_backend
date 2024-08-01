@@ -5,7 +5,7 @@ export interface RealEstate {
   id: number,
   title: string,
   price: string,
-  negotiation: 'venda' | 'locação',
+  negotiation: 'venda' | 'locacao',
   description: string,
   zipCode: string,
   address: string,

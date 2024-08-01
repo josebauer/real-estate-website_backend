@@ -24,6 +24,8 @@ export const locale: Locale = {
         logout: 'Sair',
         seeTheDocumentation: 'Ver: <1>a documentação<1>',
         createFirstRecord: 'Criar primeiro registro',
+        confirm: 'Confirmar',
+        cancel: 'Cancelar'
       },
       labels: {
         navigation: 'Navegação',

@@ -17,7 +17,7 @@ export const realEstateResourceOptions: ResourceOptions = {
     negotiation: {
       availableValues: [
         { value: 'venda', label: 'Venda' },
-        { value: 'locação', label: 'Locação' }
+        { value: 'locacao', label: 'Locação' }
       ],
     },
     zipCode: {
