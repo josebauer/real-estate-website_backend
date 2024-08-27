@@ -29,13 +29,21 @@ export const realEstateController = {
 
   // Method GET /real-estate/filter
   filter: async (req: Request, res: Response) => {
-    const { negotiation } = req.query
-    const [page, perPage] = getPaginationParams(req.query)
+    const [page, perPage] = getPaginationParams(req.query);
 
     try {
-      if (typeof negotiation !== 'string') throw new Error('negotiation param must be of type string')
-      const filterRealEstate = await realEstateService.findByNegotitationType(negotiation, page, perPage)
-      return res.json(filterRealEstate)
+      const filters = Object.entries(req.query).reduce((acc, [key, value]) => {
+        if (['page', 'perPage'].includes(key)) return acc
+  
+        if (value) {
+          acc[key] = isNaN(Number(value)) ? value : Number(value)
+        }
+  
+        return acc
+      }, {} as Record<string, any>)
+  
+      const filteredRealEstates = await realEstateService.findWithFilters(filters, page, perPage)
+      return res.json(filteredRealEstates)
     } catch (error) {
       if (error instanceof Error) {
         return res.status(400).json({ message: error.message })

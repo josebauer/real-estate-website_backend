@@ -65,8 +65,14 @@ export const realEstateService = {
     return realEstate
   },
 
-  findByNegotitationType: async (negotiation: string, page: number, perPage: number) => {
+  findWithFilters: async (filters: Record<string, any>, page: number, perPage: number) => {
     const offset = (page - 1) * perPage
+
+    const where: Record<string, any> = {}
+
+    Object.entries(filters).forEach(([key, value]) => {
+      where[key] = value
+    })  
 
     const { count, rows } = await RealEstate.findAndCountAll({
       attributes: [
@@ -88,9 +94,7 @@ export const realEstateService = {
         ['images_url', 'imagesUrl'],
         ['category_id', 'categoryId']
       ],
-      where: {
-        negotiation
-      },
+      where,
       limit: perPage,
       offset
     })
