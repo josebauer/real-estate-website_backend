@@ -9,7 +9,7 @@ module.exports = {
       { 
         title: 'Casa de Alvenaria', 
         price: 'R$ 1.500,00', 
-        negotiation: 'locacao', 
+        negotiation: 'locação', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         zip_code: '84560-000',
         address: 'Rua Jubuiklewi, nº 584', 
@@ -28,7 +28,7 @@ module.exports = {
       { 
         title: 'Apartamento de alto padrão', 
         price: 'R$ 10.000,00', 
-        negotiation: 'locacao', 
+        negotiation: 'locação', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         zip_code: '45560-200',
         address: 'Rua Fef Jubuiklewiwfe, nº 5854', 
@@ -63,7 +63,7 @@ module.exports = {
       { 
         title: 'Sala comercial', 
         price: 'R$ 5.500,00', 
-        negotiation: 'locacao', 
+        negotiation: 'locação', 
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 
         zip_code: '82560-425',
         address: 'Rua Sen. Pedro, nº 222', 
