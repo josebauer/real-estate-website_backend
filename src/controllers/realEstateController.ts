@@ -51,6 +51,16 @@ export const realEstateController = {
     }
   },
 
+  cities: async (req: Request, res: Response) => {
+    try {
+      const cities = await realEstateService.getDistinctCities();
+      res.json(cities);
+    } catch (error) {
+      console.error("Erro ao obter cidades:", error);
+      res.status(500).json({ message: "Erro ao buscar cidades" });
+    }
+  },
+
   // Method GET /real-estate/:id
   show: async (req: Request, res: Response) => {
     const { id } = req.params

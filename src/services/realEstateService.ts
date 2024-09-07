@@ -1,3 +1,4 @@
+import { Sequelize } from "sequelize"
 import { RealEstate } from "../models"
 
 export const realEstateService = {
@@ -105,5 +106,14 @@ export const realEstateService = {
       perPage,
       total: count
     }
+  },
+
+  getDistinctCities: async () => {
+    const cities = await RealEstate.findAll({
+    attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('city')), 'city']],
+    order: [['city', 'ASC']],
+  });
+
+  return cities.map(city => city.city);
   }
 }
