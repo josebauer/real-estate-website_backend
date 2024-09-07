@@ -51,13 +51,31 @@ export const realEstateController = {
     }
   },
 
+  // Method GET /real-estate/cities
   cities: async (req: Request, res: Response) => {
     try {
-      const cities = await realEstateService.getDistinctCities();
-      res.json(cities);
+      const cities = await realEstateService.getDistinctCities()
+      res.json(cities)
     } catch (error) {
       console.error("Erro ao obter cidades:", error);
-      res.status(500).json({ message: "Erro ao buscar cidades" });
+      res.status(500).json({ message: "Erro ao buscar cidades" })
+    }
+  },
+
+  // Method GET /real-estate/districts
+  districts: async (req: Request, res: Response) => {
+    const { city } = req.query
+  
+    try {
+      if (!city || typeof city !== 'string') {
+        return res.status(400).json({ message: "Cidade não informada ou inválida." });
+      }
+  
+      const districts = await realEstateService.getDistrictsByCities(city)
+      res.json(districts)
+    } catch (error) {
+      console.error("Erro ao obter bairros:", error);
+      res.status(500).json({ message: "Erro ao buscar bairros" });
     }
   },
 

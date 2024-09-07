@@ -112,8 +112,20 @@ export const realEstateService = {
     const cities = await RealEstate.findAll({
     attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('city')), 'city']],
     order: [['city', 'ASC']],
-  });
+  })
 
-  return cities.map(city => city.city);
+  return cities.map(city => city.city)
+  },
+
+  getDistrictsByCities: async (city: string) => {
+    const districts = await  RealEstate.findAll({
+      attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('district')), 'district']],
+      where: {
+        city, 
+      },
+      order: [['district', 'ASC']],
+    });
+
+    return districts.map(district => district.district);
   }
 }

@@ -18,6 +18,7 @@ router.get('/real-estate/featured', realEstateController.featured)
 router.get('/real-estate/newest', realEstateController.newest)
 router.get('/real-estate/filter', realEstateController.filter)
 router.get('/real-estate/cities', realEstateController.cities)
+router.get('/real-estate/districts', realEstateController.districts)
 router.get('/real-estate/:id', realEstateController.show)
 
 router.get('/favorites', ensureAuth, favoriteController.index)
