@@ -11,10 +11,12 @@ export interface User {
   phone: string
   email: string
   password: string
-  role: 'admin' | 'user'
+  role: 'admin' | 'user',
+  resetCode?: string
+  resetCodeExpires?: Date 
 }
 
-export interface UserCreationAttributes extends Optional<User, 'id'> { }
+export interface UserCreationAttributes extends Optional<User, 'id' | 'resetCode' | 'resetCodeExpires'> { }
 
 export interface UserInstance extends Model<User, UserCreationAttributes>, User {
   checkPassword: (password: string, callbackfn: CheckPasswordCallback) => void
@@ -57,7 +59,15 @@ export const User = sequelize.define<UserInstance, User>('User', {
     validate: {
       isIn: [['admin', 'user']]
     }
-  }
+  },
+  resetCode: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  resetCodeExpires: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
 }, {
   hooks: {
     beforeSave: async (user) => {
