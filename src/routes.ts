@@ -11,6 +11,10 @@ const router = express.Router()
 router.post('/auth/register', authController.register)
 router.post('/auth/login', authController.login)
 
+router.post('/auth/forgot-password', authController.forgotPassword)
+router.post('/auth/verify-reset-code', authController.verifyResetCode)
+router.post('/auth/reset-password', authController.resetPassword)
+
 router.get('/categories', categoriesController.index)
 router.get('/categories/:id', categoriesController.show)
 
