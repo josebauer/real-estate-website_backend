@@ -84,6 +84,7 @@ export const authController = {
       const resetCode = await userService.generateResetCode(user.id)
 
       await transporter.sendMail({
+        from: `"Imobiliária JH" <contato.imobiliariajh@gmail.com>`,
         to: user.email,
         subject: 'Não responda - Código de Recuperação de Senha',
         text: `Olá, ${user.firstName}!\n\nSeu código de recuperação de senha é: ${resetCode}\n\nEle irá expirar em 10 minutos.`,
