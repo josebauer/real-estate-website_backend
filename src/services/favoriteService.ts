@@ -16,6 +16,7 @@ export const favortiteService = {
           'city',
           'state',
           ['building_area', 'buildingArea'],
+          ['total_area', 'totalArea'],
           'bedrooms',
           'suites',
           'garages',
