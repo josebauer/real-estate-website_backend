@@ -16,7 +16,7 @@ export const favoriteController = {
       }
     }
   },
-  
+
   // Method POST /favorites
   save: async (req: AuthenticatedRequest, res: Response) => {
     const userId = req.user!.id
@@ -45,5 +45,20 @@ export const favoriteController = {
         return res.status(400).json({ message: error.message })
       }
     }
-  }
+  },
+
+  // Method GET /favorites/status/:id
+  status: async (req: AuthenticatedRequest, res: Response) => {
+    const userId = req.user!.id
+    const realEstateId = Number(req.params.id)
+
+    try {
+      const isFavorited = await favoriteService.isFavorited(userId, realEstateId)
+      return res.json({ favorited: isFavorited })
+    } catch (error) {
+      if (error instanceof Error) {
+        return res.status(400).json({ message: error.message })
+      }
+    }
+  },
 }
