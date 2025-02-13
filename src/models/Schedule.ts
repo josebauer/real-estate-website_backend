@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import { sequelize } from "../database";
-import { RealEstateInstance } from "./RealEstate";
+import { RealEstate, RealEstateInstance } from "./RealEstate";
 import { UserInstance } from "./User";
 
 export interface Schedule {
@@ -8,7 +8,8 @@ export interface Schedule {
   userId: number,
   realEstateId: number,
   scheduledDate: Date,
-  status: "pendente" | "confirmado" | "cancelado"
+  status: "pendente" | "confirmado" | "cancelado",
+  realEstate?: RealEstate
 }
 
 export interface ScheduleCreationAttributes extends Optional<Schedule, "id" | "status"> {}

@@ -31,7 +31,8 @@ export const scheduleService = {
       userId,
       schedules: schedules.map((schedule) => ({
         id: schedule.id,
-        realEstate: schedule.realEstateId,
+        realEstateId: schedule.realEstateId,
+        realEstate: schedule.realEstate,
         scheduledDate: schedule.scheduledDate,
         status: schedule.status,
       })),
