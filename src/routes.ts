@@ -5,6 +5,7 @@ import { authController } from './controllers/authController'
 import { favoriteController } from './controllers/favoritesController'
 import { ensureAuth } from './middlewares/auth'
 import { usersController } from './controllers/usersController'
+import { scheduleController } from './controllers/schedulesController'
 
 const router = express.Router()
 
@@ -28,7 +29,12 @@ router.get('/real-estate/:id', realEstateController.show)
 router.get('/favorites', ensureAuth, favoriteController.index)
 router.post('/favorites', ensureAuth, favoriteController.save)
 router.delete('/favorites/:id', ensureAuth, favoriteController.delete)
-router.get('/favorites/status/:id', ensureAuth, favoriteController.status);
+router.patch('/favorites/status/:id', ensureAuth, favoriteController.status)
+
+router.get('/schedules', ensureAuth, scheduleController.index)
+router.post('/schedules', ensureAuth, scheduleController.save)
+router.delete('/schedules/:id', ensureAuth, scheduleController.delete)
+router.patch('/schedules/:id/status', ensureAuth, scheduleController.updateStatus)
 
 router.get('/users/current', ensureAuth, usersController.show)
 router.put('/users/current', ensureAuth, usersController.update)
