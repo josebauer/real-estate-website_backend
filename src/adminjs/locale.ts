@@ -37,6 +37,7 @@ export const locale: Locale = {
         real_estates: 'Imóveis',
         categories: 'Categorias',
         users: 'Usuários',
+        schedules: 'Agendamentos'
       },
       properties: {
         firstName: 'Nome',
@@ -68,7 +69,10 @@ export const locale: Locale = {
         createdAt: 'Criado em',
         updatedAt: 'Atualizado em',
         from: 'De',
-        to: 'Até'
+        to: 'Até',
+        userId: 'Usuário',
+        scheduledDate: 'Data agendada',
+        realEstateId: 'Imóvel'
       },
       components: {
         Login: {
