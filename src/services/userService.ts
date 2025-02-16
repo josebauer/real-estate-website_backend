@@ -12,6 +12,14 @@ export const userService = {
     return user
   },
 
+  findById: async (id: number) => {
+    const user = await User.findByPk(id);
+    if (!user) {
+      throw new Error('Usuário não encontrado');
+    }
+    return user;
+  },
+
   create: async (attributes: UserCreationAttributes) => {
     const user = await User.create(attributes)
     return user
