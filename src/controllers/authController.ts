@@ -1,15 +1,7 @@
 import { Request, Response } from "express";
 import { userService } from "../services/userService";
 import { jwtService } from "../services/jwtService";
-import nodemailer from 'nodemailer';
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+import { transporter } from "../utils/emailService";
 
 export const authController = {
   // Method POST /auth/register
