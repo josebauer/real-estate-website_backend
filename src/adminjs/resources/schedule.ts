@@ -1,5 +1,9 @@
-import { ResourceOptions } from "adminjs";
+import { ActionResponse, ResourceOptions } from "adminjs";
 import { Components } from "../components";
+import { userService } from "../../services/userService";
+import { format } from "date-fns";
+import { ptBR } from 'date-fns/locale';
+import { sendEmail } from "../../utils/emailService";
 
 export const scheduleResourceOptions: ResourceOptions = {
   navigation: {
@@ -39,6 +43,27 @@ export const scheduleResourceOptions: ResourceOptions = {
       ]
     },
     edit: {
+      after: async (response: ActionResponse, request: any) => {
+        if (response.record && request.payload.status) {
+          const schedule = response.record.params;
+          const user = await userService.findById(schedule.userId);
+
+          if (user) {
+            const formattedDate = format(
+              schedule.scheduledDate,
+              "dd/MM/yyyy HH:mm",
+              { locale: ptBR }
+            );
+
+            await sendEmail(
+              user.email,
+              "Atualização de Status do Agendamento",
+              `Olá, ${user.firstName}!\n\nO status do seu agendamento do dia ${formattedDate}, foi atualizado para: ${schedule.status.toUpperCase()}.\n\nImobiliária JH`
+            );
+          }
+        }
+        return response;
+      },
       layout: [
         [
           { flexDirection: 'row', flex: true, flexWrap: 'wrap' },
