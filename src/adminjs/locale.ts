@@ -49,6 +49,7 @@ export const locale: Locale = {
         name: 'Nome',
         title: 'Título do imóvel',
         price: 'Valor',
+        condominium: 'Condomínio',
         negotiation: 'Tipo de negociação',
         description: 'Descrição',
         zipCode: 'CEP',

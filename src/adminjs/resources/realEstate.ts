@@ -14,6 +14,11 @@ export const realEstateResourceOptions: ResourceOptions = {
         edit: Components.InputFormattedPrice
       }
     },
+    condominium: {
+      components: {
+        edit: Components.InputFormattedCondominium
+      }
+    },
     negotiation: {
       availableValues: [
         { value: 'venda', label: 'Venda' },
@@ -76,6 +81,7 @@ export const realEstateResourceOptions: ResourceOptions = {
   editProperties: [
     'title',
     'price',
+    'condominium',
     'negotiation',
     'description',
     'zipCode',
@@ -95,6 +101,7 @@ export const realEstateResourceOptions: ResourceOptions = {
   filterProperties: [
     'title',
     'price',
+    'condominium',
     'negotiation',
     'description',
     'zipCode',
@@ -124,6 +131,7 @@ export const realEstateResourceOptions: ResourceOptions = {
     'id',
     'title',
     'price',
+    'condominium',
     'negotiation',
     'description',
     'zipCode',
@@ -150,6 +158,7 @@ export const realEstateResourceOptions: ResourceOptions = {
           [
             ['title', { flexGrow: 1, mx: '5px' }],
             ['price', { flexGrow: 1, mx: '5px' }],
+            ['condominium', { flexGrow: 1, mx: '5px' }],
             ['negotiation', { flexGrow: 1, mx: '5px' }]
           ]
         ],
@@ -192,6 +201,7 @@ export const realEstateResourceOptions: ResourceOptions = {
           [
             ['title', { flexGrow: 1, mx: '5px' }],
             ['price', { flexGrow: 1, mx: '5px' }],
+            ['condominium', { flexGrow: 1, mx: '5px' }],
             ['negotiation', { flexGrow: 1, mx: '5px' }]
           ]
         ],
@@ -238,6 +248,7 @@ export const realEstateResourceOptions: ResourceOptions = {
           [
             ['title', { flexGrow: 1, mx: '5px' }],
             ['price', { flexGrow: 1, mx: '5px' }],
+            ['condominium', { flexGrow: 1, mx: '5px' }],
             ['negotiation', { flexGrow: 1, mx: '5px' }]
           ]
         ],
