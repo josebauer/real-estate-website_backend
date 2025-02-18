@@ -5,6 +5,7 @@ export interface RealEstate {
   id: number,
   title: string,
   price: string,
+  condominium: string,
   negotiation: 'venda' | 'locação',
   description: string,
   zipCode: string,
@@ -23,7 +24,7 @@ export interface RealEstate {
 }
 
 export interface RealEstateCreationAttributes extends Optional<RealEstate, 
-'id' | 'price' | 'buildingArea' | 'totalArea' | 'bedrooms' | 'suites' | 'garages' | 'imagesUrl' | 'featured'> { }
+'id' | 'price' | 'condominium' | 'buildingArea' | 'totalArea' | 'bedrooms' | 'suites' | 'garages' | 'imagesUrl' | 'featured'> { }
 
 export interface RealEstateInstance extends Model<RealEstate, RealEstateCreationAttributes>, RealEstate { }
 
@@ -39,6 +40,9 @@ export const RealEstate = sequelize.define<RealEstateInstance, RealEstate>('Real
     type: DataTypes.STRING
   },
   price: {
+    type: DataTypes.STRING
+  },
+  condominium: {
     type: DataTypes.STRING
   },
   negotiation: {
