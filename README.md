@@ -4,7 +4,7 @@
 
 ## 🚀 Instalação
 
-1. Antes de tudo, tenha certeza que o DB PostgreSQL, NodeJS e NPM estão instalados e configurados corretamente em seu computador;
+1. Antes de tudo, tenha certeza que o DB PostgreSQL, NodeJS e NPM estão instalados e configurados corretamente em seu computador.
 
 2. Clone o repositório
   ```bash
@@ -41,6 +41,8 @@
    ```bash
    npm run dev
    ```
+
+8. Abra [http://localhost:3000/admin](http://localhost:3000/admin) em seu navegador, para acessar a tela de gerenciamento do AdminJS.
    
 ## ⚙️ Funcionalidades
 - Gerenciamento da Imobiliária com cadastramento, atualização e exclusão de usuários, imóveis, categorias e agendamento de visitas pelo AdminJS;
