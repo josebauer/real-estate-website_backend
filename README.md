@@ -7,9 +7,9 @@
 1. Antes de tudo, tenha certeza que o DB PostgreSQL, NodeJS e NPM estão instalados e configurados corretamente em seu computador.
 
 2. Clone o repositório
-  ```bash
-  git clone git@github.com:josebauer/real-estate-website_backend.git
-  ```
+   ```bash
+   git clone git@github.com:josebauer/real-estate-website_backend.git
+   ```
 
 3. Instale as dependências do app:
    ```bash
