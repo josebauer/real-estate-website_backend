@@ -13,7 +13,10 @@ export default function Dashboard() {
 
   async function fetchDashboardData() {
     const res = await api.getDashboard()
-    setResources(res.data)
+    
+    if (typeof res.data === "object" && res.data !== null) {
+      setResources(res.data as { [key: string]: number })
+    }
   }
 
   return (

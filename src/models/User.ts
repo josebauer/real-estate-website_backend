@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 
 type CheckPasswordCallback = (error?: Error, isSame?: boolean) => void
 
-export interface User {
+export interface UserAttributes {
   id: number
   firstName: string
   lastName: string
@@ -16,13 +16,27 @@ export interface User {
   resetCodeExpires?: Date 
 }
 
-export interface UserCreationAttributes extends Optional<User, 'id' | 'resetCode' | 'resetCodeExpires'> { }
+export interface UserCreationAttributes extends Optional<UserAttributes, 'id' | 'resetCode' | 'resetCodeExpires'> { }
 
-export interface UserInstance extends Model<User, UserCreationAttributes>, User {
-  checkPassword: (password: string, callbackfn: CheckPasswordCallback) => void
+export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+  public id!: number
+  public firstName!: string
+  public lastName!: string
+  public phone!: string
+  public email!: string
+  public password!: string
+  public role!: 'admin' | 'user'
+  public resetCode?: string
+  public resetCodeExpires?: Date
+
+  public checkPassword(password: string, callbackfn: CheckPasswordCallback) {
+    bcrypt.compare(password, this.password, (error, isSame) => {
+      callbackfn(error, isSame)
+    })
+  }
 }
 
-export const User = sequelize.define<UserInstance, User>('User', {
+User.init({
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -69,21 +83,13 @@ export const User = sequelize.define<UserInstance, User>('User', {
     allowNull: true,
   },
 }, {
+  sequelize,
+  modelName: 'User',
   hooks: {
     beforeSave: async (user) => {
-      if (user.isNewRecord || user.changed('password')) {
+      if (user instanceof User && (user.isNewRecord || user.changed('password'))) {
         user.password = await bcrypt.hash(user.password.toString(), 10)
       }
     }
   }
 })
-
-User.prototype.checkPassword = function (password: string, callbackfn: CheckPasswordCallback) {
-  bcrypt.compare(password, this.password, (error, isSame) => {
-    if (error) {
-      callbackfn(error)
-    } else {
-      callbackfn(error, isSame)
-    }
-  })
-}

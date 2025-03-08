@@ -1,7 +1,7 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import { sequelize } from "../database";
 import { RealEstate, RealEstateInstance } from "./RealEstate";
-import { UserInstance } from "./User";
+import { User } from "./User";
 
 export interface Schedule {
   id: number,
@@ -16,7 +16,7 @@ export interface ScheduleCreationAttributes extends Optional<Schedule, "id" | "s
 
 export interface ScheduleInstance extends Model<Schedule, ScheduleCreationAttributes>, Schedule {
   RealEstate?: RealEstateInstance;
-  User?: UserInstance;
+  User?: User;
 }
 
 export interface ScheduleInstance extends Model<Schedule, ScheduleCreationAttributes>, Schedule {}

@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import { RealEstateInstance } from "./RealEstate";
-import { UserInstance } from "./User";
+import { User } from "./User";
 import { sequelize } from "../database";
 
 export interface Favorite {
@@ -10,7 +10,7 @@ export interface Favorite {
 
 export interface FavoriteInstance extends Model<Favorite>, Favorite { 
   RealEstate?: RealEstateInstance
-  User?: UserInstance
+  User?: User
 }
 
 export const Favorite = sequelize.define<FavoriteInstance, Favorite>('Favorite', {

@@ -2,10 +2,10 @@ import { NextFunction, Request, Response } from "express";
 import { jwtService } from "../services/jwtService";
 import { userService } from "../services/userService";
 import { JwtPayload } from "jsonwebtoken";
-import { UserInstance } from "../models/User";
+import { User } from "../models/User";
 
 export interface AuthenticatedRequest extends Request {
-  user?: UserInstance | null
+  user?: User | null
 }
 
 export function ensureAuth(req: AuthenticatedRequest, res: Response, next: NextFunction) {
