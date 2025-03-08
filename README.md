@@ -20,12 +20,15 @@
    ```bash
    touch .env
    ```
-   Nele coloque os seguintes dados:
+   Nele coloque os dados, seguindo a estrutura do arquivo .env.example:
    ```bash
-   EMAIL_USER: seuemail@email.com
-   EMAIL_PASS: senha
+   DATABASE_URL=
+   ADMINJS_COOKIE_PASS=
+   JWT_KEY=
+   
+   EMAIL_USER=
+   EMAIL_PASS=
    ```
-   O email informado será usado para enviar emails para os usuários, quando esquecerem a senha ou quando fizerem agendamentos de visitas a imóveis.
 
 5. Rode as migrations para criar as tabelas do DB:
    ```bash
