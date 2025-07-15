@@ -4,7 +4,7 @@ import AdminJSSequelize from "@adminjs/sequelize";
 import { sequelize } from "../database";
 import { adminJsResources } from "./resources";
 import { componentLoader } from './components';
-import { Category, RealEstate, User } from "../models";
+import { Category, RealEstate, Schedule, User } from "../models";
 import { locale } from "./locale";
 import { brandingOptions } from "./branding";
 import { authenticationOptions } from "./authentication";
@@ -32,11 +32,19 @@ export const adminJS = new AdminJS({
       const realEstate = await RealEstate.count()
       const categories = await Category.count()
       const standardUsers = await User.count({ where: { role: 'user' } })
+      const schedules = await Schedule.count()
+      const pendingSchedules = await Schedule.count({ where: { status: 'pendente' } })
+      const confirmedSchedules = await Schedule.count({ where: { status: 'confirmado' } })
+      const canceledSchedules = await Schedule.count({ where: { status: 'cancelado' } })
 
       res.json({
-        'Imóveis': realEstate,
-        'Categorias': categories,
-        'Usuários': standardUsers
+        'Imóveis Cadastrados': realEstate,
+        'Categorias Cadastradas': categories,
+        'Usuários Cadastrados': standardUsers,
+        'Agendamentos Realizados': schedules,
+        'Agendamentos Pendentes': pendingSchedules,
+        'Agendamentos Confirmados': confirmedSchedules,
+        'Agendamentos Cancelados': canceledSchedules
       })
     }
   },
