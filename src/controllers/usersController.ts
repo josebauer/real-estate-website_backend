@@ -1,6 +1,7 @@
 import { Response } from "express";
 import { AuthenticatedRequest } from "../middlewares/auth";
 import { userService } from "../services/userService";
+import { sendEmail } from "../utils/emailService";
 
 export const usersController = {
   // Method GET /users/current
@@ -27,6 +28,12 @@ export const usersController = {
         phone,
         email
       })
+
+      await sendEmail(
+        email,
+        'Atualização de Cadastro',
+        `Olá, ${firstName}!\n\nSeus dados foram atualizados com sucesso!.\nCaso não tenha sido você, recomendamos que altere sua senha.\n\nImobiliária JH`
+      );
 
       return res.json(updatedUser)
     } catch (error) {

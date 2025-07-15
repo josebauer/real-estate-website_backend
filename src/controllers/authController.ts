@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { userService } from "../services/userService";
 import { jwtService } from "../services/jwtService";
 import { transporter } from "../utils/emailService";
+import { sendEmail } from "../utils/emailService";
 
 export const authController = {
   // Method POST /auth/register
@@ -23,6 +24,12 @@ export const authController = {
         password,
         role: 'user'
       })
+
+      await sendEmail(
+        email,
+        'Cadastro Realizado',
+        `Olá, ${firstName}!\n\nSeja bem-vindo à Imobiliária JH!.\nVocê terá acesso aos mais diversos imóveis, podendo favoritá-los e realizar agendamentos de visitas diretamente pelo site.\n\nImobiliária JH`
+      );
 
       return res.status(201).json(user)
 
